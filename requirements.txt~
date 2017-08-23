@@ -1,8 +1,0 @@
-Requirements :
-
-1.If you didn't istalled pip
- 	+This program file requires guessit, To install guessit and pip run the command in your terminal. 
- 	- sudo apt-get install pip
- 	- sudo pip install guessit
-2.Create google search API with your google account and get 'my_api_key' and 'my_cse_id'.While you are creating mention www.imdb.com site in the google console search.
-3.paste your 'my_api_key' and 'my_cse_id' in the python code and save the file.
