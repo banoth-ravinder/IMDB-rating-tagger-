@@ -1,6 +1,5 @@
 import glob
 import urllib2
-#import requests
 import lxml
 import lxml.html
 import os
@@ -13,8 +12,6 @@ from googleapiclient.discovery import build
 from urllib2 import urlopen
 from lxml import etree as ET
 from guessit import guessit
-
-#url = "http://www.imdbapi.com/?t=" + searchstring + "&y="+year
 
 my_api_key = "Google API Key"
 my_cse_id = "CSE Id"
@@ -30,7 +27,7 @@ root.withdraw()
 path = tkFileDialog.askdirectory(parent=root,initialdir="/",title='Please select a Directory')
 
 '''
-print'Give the path where you have to search Example: /home/banoth/Desktop'
+print'Give the path where you have to search Example: /home/user/Desktop'
 path=raw_input()
 '''
 files=os.listdir(path)
@@ -56,10 +53,8 @@ for filename in files:
 
 					if filedata['type']=='episode' :
 						episodename=filedata['episode_title']
-						#print episodename
 						print 'Season- '+str( filedata['season']) 
 						print 'Episode- '+str(filedata['episode'])
-						#results = google_search(moviename+ episodename+' site:imdb.com/title', my_api_key, my_cse_id, num=10) 
 						results = google_search(moviename+' season '+ str(filedata['season'])+' episode '+ str(filedata['episode'])+' site:imdb.com/title', my_api_key, my_cse_id ,num=10)
 						
 					result = results[0]
